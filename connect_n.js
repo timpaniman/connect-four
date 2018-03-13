@@ -36,3 +36,19 @@ function show(board) {
     }
     return rows.join('\n');
 }
+
+
+// Smoke test
+
+function testme() {
+    const b = makeBoard();
+    console.log(show(b));
+    console.log();
+    drop(b, 0, 1);
+    drop(b, 0, 2);
+    drop(b, 2, 1);
+    console.log(show(b));
+    console.log();
+}
+
+testme();
