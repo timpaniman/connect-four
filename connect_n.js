@@ -30,7 +30,7 @@ function at(board, r, c) {
 
 const pieces = ['.', 'X', 'O'];
 
-// Return an ASCII representation of the board.
+// Return a string representation of the board.
 function show(board) {
     const rows = [];
     for (let r = nrows-1; 0 <= r; --r) {
