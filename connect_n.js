@@ -20,7 +20,7 @@ function drop(board, col, piece) {
 function at(board, r, c) {
     if (r < 0 || nrows <= r) return 0;
     const col = board[r];
-    if (c < 0 || cols.length <= c) return 0;
+    if (c < 0 || col.length <= c) return 0;
     return col[c];
 }
 
@@ -32,7 +32,7 @@ function show(board) {
     for (let r = 0; r < nrows; ++r) {
         const row = [];
         for (let c = 0; c < ncols; ++c) row.push(pieces[at(board, r, c)]);
-        rows.append(row.join(' '));
+        rows.push(row.join(' '));
     }
     return rows.join('\n');
 }
