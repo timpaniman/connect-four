@@ -44,9 +44,7 @@ function show(board) {
 // Precondition: the last move was to column c.
 // Did that move win the game?
 function won(board, c) {
-    const col = board[c];
-    const r = col.length - 1;
-    
+    const r = board[c].length - 1;
     return (   streak(board, r, c, 1, 0)    // vertical
             || streak(board, r, c, 0, 1)    // horizontal
             || streak(board, r, c, 1, 1)    // rising diagonal
