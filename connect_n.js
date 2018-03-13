@@ -31,7 +31,7 @@ function show(board) {
     const rows = [];
     for (let r = 0; r < nrows; ++r) {
         const row = [];
-        for (let c = 0, c < ncols; ++c) row.push(pieces[at(board, r, c)]);
+        for (let c = 0; c < ncols; ++c) row.push(pieces[at(board, r, c)]);
         rows.append(row.join(' '));
     }
     return rows.join('\n');
