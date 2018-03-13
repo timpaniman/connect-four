@@ -13,23 +13,23 @@ function makeBoard() {
 
 // Mutate the board: drop the piece into the column.
 function drop(board, col, piece) {
-    board[col].append(piece);
+    board[col].push(piece);
 }
 
 // The piece at (r,c): 1, 2, or 0 (meaning empty).
 function at(board, r, c) {
-    if (r < 0 || nrows <= r) return 0;
-    const col = board[r];
-    if (c < 0 || col.length <= c) return 0;
-    return col[c];
+    if (c < 0 || ncols <= c) return 0;
+    const col = board[c];
+    if (r < 0 || col.length <= r) return 0;
+    return col[r];
 }
 
-const pieces = [' ', 'X', 'O'];
+const pieces = ['.', 'X', 'O'];
 
 // Return an ASCII representation of the board.
 function show(board) {
     const rows = [];
-    for (let r = 0; r < nrows; ++r) {
+    for (let r = nrows-1; 0 <= r; --r) {
         const row = [];
         for (let c = 0; c < ncols; ++c) row.push(pieces[at(board, r, c)]);
         rows.push(row.join(' '));
