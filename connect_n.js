@@ -82,8 +82,9 @@ function outOfBound(board, c, piece) {
     } else
     if (board[c].length == 6) {
         console.log('Column is already filled up!');
-        return false;
-    }
+        return true;
+    } else
+        false;
 }
 // Smoke test
 
@@ -125,6 +126,17 @@ function testme() {
 
     // now test out of bound drop => Success
     drop(b, 1, 1);
+    console.log(show(b));
+    console.log();
+
+
+    // now test out of bound drop => Fail
+    drop(b, 7, 1);
+    console.log(show(b));
+    console.log();
+
+    // now test out of bound drop => Success
+    drop(b, 6, 1);
     console.log(show(b));
     console.log();
 
