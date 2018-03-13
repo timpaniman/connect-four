@@ -52,7 +52,7 @@ function won(board, c) {
 }
 
 // Is there a streak of at least nstreak pieces of the same type going
-// through (r0,c0) in the directior (dr,dc)?
+// through (r0,c0) in the direction (dr,dc)?
 function streak(board, r0, c0, dr, dc) {
     const piece = at(board, r0, c0);
     let n = 1;
