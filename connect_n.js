@@ -7,6 +7,15 @@ const nstreak = 3; // I think we want 5? But this is easier to test.
 const nrows = 6;
 const ncols = 7;
 
+// Kevin,  command line user input processing
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: 'Enter column # between 0 and 6 (Q to quit) > '
+});
+const endGame = false; // flag to exit while loop of getting user input to end game
+
 // A board is represented as an array of stacks of pieces. A piece is
 // an integer 1 or 2 denoting which player's.
 function makeBoard() {
@@ -144,4 +153,42 @@ function testme() {
 }
 
 testme();
-return;
+
+// kevin,  user input handling
+
+rl.prompt();
+
+rl.on('line', (line) => {
+    switch (line.trim()) {
+        case 'Q':
+            console.log('End of Game.');
+            process.exit(0);
+        case '0':
+            console.log('You entered 0');
+            return;
+        case '1':
+            console.log('You entered 1');
+            return;
+        case '2':
+            console.log('You entered 2');
+            break;
+        case '3':
+            console.log('You entered 3');
+            break;
+        case '4':
+            console.log('You entered 4');
+            break;
+        case '5':
+            console.log('You entered 5');
+            break;
+        case '6':
+            console.log('You entered 6');
+            break;
+        default:
+            console.log(`Invalid Choice. '${line}'`);
+            break;
+    }
+    rl.prompt();
+}).on('close', () => {
+    process.exit(0);
+});
