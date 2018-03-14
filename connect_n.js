@@ -11,65 +11,6 @@ const rl = readline.createInterface({
 });
 const endGame = false; // flag to exit while loop of getting user input to end game
 
-// Smoke test
-
-function testme() {
-    const b = makeBoard();
-
-    console.log(show(b));
-    console.log();
-
-    // show vertical stack
-    drop(b, 0, 1);
-    drop(b, 0, 2);
-    drop(b, 0, 1);
-    drop(b, 0, 2);
-    console.log(show(b));
-    console.log();
-
-
-    // show horizontal stack
-    drop(b, 0, 1);
-    drop(b, 1, 2);
-    drop(b, 2, 1);
-    drop(b, 3, 2);
-    console.log(show(b));
-    //  console.log(won(b, 1));
-    console.log();
-    // now test dropping into non-empty column
-    drop(b, 0, 1);
-    drop(b, 1, 2);
-    drop(b, 2, 1);
-    drop(b, 3, 2);
-    console.log(show(b));
-    console.log();
-
-    // now test out of bound drop => Fail
-    drop(b, 0, 1);
-    console.log(show(b));
-    console.log();
-
-    // now test out of bound drop => Success
-    drop(b, 1, 1);
-    console.log(show(b));
-    console.log();
-
-
-    // now test out of bound drop => Fail
-    drop(b, 7, 1);
-    console.log(show(b));
-    console.log();
-
-    // now test out of bound drop => Success
-    drop(b, 6, 1);
-    console.log(show(b));
-    console.log();
-
-    return;
-}
-
-testme();
-
 // kevin,  user input handling
 
 rl.prompt();
