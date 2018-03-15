@@ -1,4 +1,8 @@
 # connect-four
+
+View this file using Raw mode:
+
+
 This is a Node based character mode connect four game.
 Just run this as node app, and enter column # to drop the chip represented by X and O
 
