@@ -1,62 +1,50 @@
-const {makeBoard, drop, show} = require('./board');
+"use strict";
+
+const {makeBoard, at, drop, show, won} = require('./board');
 
 // Smoke test
 
 function testme() {
-    const b = makeBoard();
+    let b = makeBoard();
+    let empty = true;
+    let mover = 2;
 
-    console.log(show(b));
-    console.log();
-
-    // show vertical stack
-    drop(b, 0, 1);
-    drop(b, 0, 2);
-    drop(b, 0, 1);
-    drop(b, 0, 2);
-    console.log(show(b));
-    console.log();
-
-
-    // show horizontal stack
-    drop(b, 0, 1);
-    drop(b, 1, 2);
-    drop(b, 2, 1);
-    drop(b, 3, 2);
-    console.log(show(b));
-    //  console.log(won(b, 1));
-    console.log();
-    // now test dropping into non-empty column
-    drop(b, 0, 1);
-    drop(b, 1, 2);
-    drop(b, 2, 1);
-    drop(b, 3, 2);
-    console.log(show(b));
-    console.log();
-
-    // now test out of bound drop => Fail
-    if (false) {
-    drop(b, 0, 1);
-    console.log(show(b));
-    console.log();
+    function restart() {
+        empty = true;
+        mover = 2;
     }
 
-    // now test out of bound drop => Success
-    drop(b, 1, 1);
-    console.log(show(b));
-    console.log();
-
-
-    // now test out of bound drop => Fail
-    if (false) {
-    drop(b, 7, 1);
-    console.log(show(b));
-    console.log();
+    function move(column) {
+        mover = 3 - mover;   // swap the player number: 1->2, 2->1
+        drop(b, column, mover);
+        empty = false;
     }
 
-    // now test out of bound drop => Success
-    drop(b, 6, 1);
-    console.log(show(b));
-    console.log();
+    function report() {
+        console.log(show(b));
+        if (!empty) console.log(won(b, mover));
+        console.log();        
+    }
+
+    // empty
+    report();
+
+    // vertical stack
+    move(0);
+    move(0);
+    move(0);
+    report();
+
+    // diagonal win
+    move(1);
+    move(1);
+    move(0);
+    move(2);
+    report();
+
+    // let's try the other diagonal
+    restart();
+
 }
 
 testme();
