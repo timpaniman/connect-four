@@ -1,7 +1,7 @@
 // Connect-N board
 
 // How many pieces in a row are needed to win.
-const nstreak = 4; // I think we want 5? But this is easier to test.
+const nstreak = 3; // I think we want 5? But this is easier to test.
 
 // The size of the board
 const nrows = 6;
