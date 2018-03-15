@@ -1,7 +1,9 @@
 // Connect-N board
 
+"use strict";
+
 // How many pieces in a row are needed to win.
-const nstreak = 4; // I think we want 5? But this is easier to test.
+const nstreak = 3; // I think we want 5? But this is easier to test.
 
 // The size of the board
 const nrows = 6;
@@ -84,6 +86,7 @@ function isDraw(board) {
 // through (r0,c0) in the direction (dr,dc)?
 function streak(board, r0, c0, dr, dc) {
     const piece = at(board, r0, c0);
+    if (piece === 0) return false;
     let n = 1;
     for (let r = r0 + dr, c = c0 + dc; piece === at(board, r, c); r += dr, c += dc) {
         n += 1;
@@ -101,7 +104,7 @@ function outOfBound(board, c, piece) {
         console.log('Column # out of Range! Enter a valid column #.');
         return true;
     } else
-    if (board[c].length == 7) {
+    if (board[c].length === 7) {
         console.log('Column is already filled up! Enter a valid column #.');
         return true;
     } else
