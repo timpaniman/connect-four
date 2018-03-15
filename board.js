@@ -26,12 +26,11 @@ function makeBoard() {
 
 // Mutate the board: drop the piece into column c.
 function drop(board, c, piece) {
-    if (outOfBound(board, c, piece)) // added by Kevin
-    {
-        console.log("Illegeal drop");
-    } else {
-        board[c].push(piece);
-    }
+    // if (outOfBound(board, c, piece)) // added by Kevin
+    // {;
+    //  } else {
+    board[c].push(piece);
+    //  }
 }
 
 // The piece at (r,c): 1, 2, or 0 (meaning empty).
@@ -42,18 +41,19 @@ function at(board, r, c) {
     return col[r];
 }
 
-const pieces = ['.', 'X', 'O'];
+const pieces = ['*', 'X', 'O'];
 
 // Return a string representation of the board.
 function show(board) {
     const rows = [];
+
     for (let r = nrows - 1; 0 <= r; --r) {
         const row = [];
         for (let c = 0; c < ncols; ++c) row.push(pieces[at(board, r, c)]);
         rows.push(row.join(' '));
     }
     return rows.join('\n');
-    console.log('Showing board');
+
 }
 
 // Precondition: the last move was to column c.
@@ -67,6 +67,16 @@ function won(board, c) {
         streak(board, r, c, 1, 1) // rising diagonal
         ||
         streak(board, r, c, 1, -1)); // falling diagonal
+}
+
+function isDraw(board) {
+    let status = true;
+    for (let i = 0; i < 7; i++) {
+        if (board[i].length < 6) {
+            status = false;
+        }
+    }
+    return status;
 }
 
 // Is there a streak of at least nstreak pieces of the same type going
@@ -87,14 +97,16 @@ function streak(board, r0, c0, dr, dc) {
 function outOfBound(board, c, piece) {
 
     if (c < 0 || c > 6) {
-        console.log('Column # out of Range!');
+        console.log('Column # out of Range! Enter a valid column #.');
         return true;
     } else
-    if (board[c].length == 6) {
-        console.log('Column is already filled up!');
+    if (board[c].length == 7) {
+        console.log('Column is already filled up! Enter a valid column #.');
         return true;
     } else
         false;
 }
 
-module.exports = { makeBoard, drop, show, won };
+
+
+module.exports = { makeBoard, drop, show, won, isDraw, outOfBound };
