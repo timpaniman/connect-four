@@ -5,26 +5,29 @@ const {makeBoard, at, drop, show, won} = require('./board');
 // Smoke test
 
 function testme() {
-    let b = makeBoard();
-    let empty = true;
-    let mover = 2;
+    let b, mover, lastMove, moveNumber;
 
     function restart() {
-        empty = true;
+        b = makeBoard();
         mover = 2;
+        moveNumber = 0;
+        lastMove = null;
     }
 
     function move(column) {
         mover = 3 - mover;   // swap the player number: 1->2, 2->1
         drop(b, column, mover);
-        empty = false;
+        ++moveNumber;
+        lastMove = column;
+        if (won(b, lastMove)) console.log('won on move', moveNumber);
     }
 
     function report() {
         console.log(show(b));
-        if (!empty) console.log(won(b, mover));
         console.log();        
     }
+
+    restart();
 
     // empty
     report();
@@ -44,6 +47,12 @@ function testme() {
 
     // let's try the other diagonal
     restart();
+
+    move(4); move(4);
+    move(4); move(3);
+    move(3); move(5);
+    move(2);
+    report();
 
 }
 
