@@ -47,6 +47,7 @@ const pieces = ['*', 'X', 'O'];
 function show(board) {
     const rows = [];
 
+
     for (let r = nrows - 1; 0 <= r; --r) {
         const row = [];
         for (let c = 0; c < ncols; ++c) row.push(pieces[at(board, r, c)]);

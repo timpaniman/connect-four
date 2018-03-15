@@ -1,4 +1,4 @@
-const {makeBoard, drop, show} = require('./board');
+const { makeBoard, drop, show } = require('./board');
 
 // Smoke test
 
@@ -34,9 +34,9 @@ function testme() {
     console.log();
 
     // now test out of bound drop => Fail
-    drop(b, 0, 1);
-    console.log(show(b));
-    console.log();
+    //drop(b, 0, 1);
+    //console.log(show(b));
+    //console.log();
 
     // now test out of bound drop => Success
     drop(b, 1, 1);
@@ -45,9 +45,9 @@ function testme() {
 
 
     // now test out of bound drop => Fail
-    drop(b, 7, 1);
-    console.log(show(b));
-    console.log();
+    //drop(b, 7, 1);
+    //console.log(show(b));
+    //console.log();
 
     // now test out of bound drop => Success
     drop(b, 6, 1);

@@ -30,8 +30,7 @@ rl.on('line', (line) => {
             console.log('End of Game.');
             process.exit(0);
         case '0':
-            console.log('You entered 0');
-            console.log('\n');
+
             console.log('===================================================');
             console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
@@ -39,180 +38,198 @@ rl.on('line', (line) => {
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
-            console.log('\nEnter Here >> ');
-
             if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
+
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
                 process.exit(0);
             }
             if (isDraw(b)) {
+                console.log(show(b));
                 console.log('The game is Draw. Bye');
                 process.exit(0);
             }
+            console.log('\nEnter Here >> ');
+
+
             if (!outOfBound(b, 0, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
-
+            } else { console.log('\n'); break; return; }
+            break;
         case '1':
-            console.log('You entered 1');
-            console.log('\n');
+
             console.log('===================================================');
             console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 1, player);
-
+            if (won(b, 1)) {
+                console.log(show(b));
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
+                process.exit(0);
+            }
+            if (isDraw(b)) {
+                console.log(show(b));
+                console.log('The game is Draw. Bye');
+                process.exit(0);
+            }
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
             console.log('\nEnter Here >> ');
-            if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
-                process.exit(0);
-            }
-            if (isDraw(b)) {
-                console.log('The game is Draw. Bye');
-                process.exit(0);
-            }
+
+
             if (!outOfBound(b, 1, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
-
+            } else { console.log('\n'); break; return; }
+            break;
         case '2':
-            console.log('You entered 2');
-            console.log('\n');
+
             console.log('===================================================');
             console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 2, player);
-
+            if (won(b, 2)) {
+                console.log(show(b));
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
+                process.exit(0);
+            }
+            if (isDraw(b)) {
+                console.log(show(b));
+                console.log('The game is Draw. Bye');
+                process.exit(0);
+            }
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
             console.log('\nEnter Here >> ');
-            if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
-                process.exit(0);
-            }
-            if (isDraw(b)) {
-                console.log('The game is Draw. Bye');
-                process.exit(0);
-            }
+
+
             if (!outOfBound(b, 2, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
+            } else { console.log('\n'); break; return; }
+            break;
 
         case '3':
-            console.log('You entered 3');
-            console.log('\n');
+
             console.log('===================================================');
             console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 3, player);
-
+            if (won(b, 3)) {
+                console.log(show(b));
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
+                process.exit(0);
+            }
+            if (isDraw(b)) {
+                console.log(show(b));
+                console.log('The game is Draw. Bye');
+                process.exit(0);
+            }
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
             console.log('\nEnter Here >> ');
-            if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
-                process.exit(0);
-            }
-            if (isDraw(b)) {
-                console.log('The game is Draw. Bye');
-                process.exit(0);
-            }
+
+
             if (!outOfBound(b, 3, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
-
+            } else { console.log('\n'); break; return; }
+            break;
         case '4':
-            console.log('You entered 4');
-            console.log('\n');
+
             console.log('===================================================');
-            console.log('Player ' + player.toString() + ', enter your column choice: (0 - 6)')
+            console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 4, player);
-
+            if (won(b, 4)) {
+                console.log(show(b));
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
+                process.exit(0);
+            }
+            if (isDraw(b)) {
+                console.log(show(b));
+                console.log('The game is Draw. Bye');
+                process.exit(0);
+            }
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
             console.log('\nEnter Here >> ');
-            if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
-                process.exit(0);
-            }
-            if (isDraw(b)) {
-                console.log('The game is Draw. Bye');
-                process.exit(0);
-            }
+
+
             if (!outOfBound(b, 4, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
-
+            } else { console.log('\n'); break; return; }
+            break;
         case '5':
-            console.log('You entered 5');
-            console.log('\n');
+
             console.log('===================================================');
-            console.log('Player ' + player.toString() + ', enter your column choice: (0 - 6)')
+            console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 5, player);
-
+            if (won(b, 5)) {
+                console.log(show(b));
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
+                process.exit(0);
+            }
+            if (isDraw(b)) {
+                console.log(show(b));
+                console.log('The game is Draw. Bye');
+                process.exit(0);
+            }
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
             console.log('\nEnter Here >> ');
 
-            if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
-                process.exit(0);
-            }
-            if (isDraw(b)) {
-                console.log('The game is Draw. Bye');
-                process.exit(0);
-            }
+
             if (!outOfBound(b, 5, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
-
+            } else { console.log('\n'); break; return; }
+            break;
         case '6':
-            console.log('You entered 6');
-            console.log('\n');
+
             console.log('===================================================');
             console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 6, player);
+            if (won(b, 6)) {
+                console.log(show(b));
+                console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
+                process.exit(0);
+            }
+            if (isDraw(b)) {
+                console.log(show(b));
+                console.log('The game is Draw. Bye');
+                process.exit(0);
+            }
             console.log('0 1 2 3 4 5 6');
             console.log('_____________');
             console.log(show(b));
             console.log('\nEnter Here >> ');
-            if (won(b, 0)) {
-                console.log('Connect 4 Completed. End of Game. Bye');
-                process.exit(0);
-            }
-            if (isDraw(b)) {
-                console.log('The game is Draw. Bye');
-                process.exit(0);
-            }
+
+
             if (!outOfBound(b, 6, player)) {
                 if (player == 1) player = 2;
                 else player = 1
                 return;
-            } else { console.log('\n'); return; }
+            } else { console.log('\n'); break; return; }
+            break;
 
         default:
             console.log(`Invalid Choice. '${line}'`);
+            break;
             return;
     }
     rl.prompt();
