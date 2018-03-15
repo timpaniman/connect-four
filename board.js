@@ -1,5 +1,7 @@
 // Connect-N board
 
+"use strict";
+
 // How many pieces in a row are needed to win.
 const nstreak = 3; // I think we want 5? But this is easier to test.
 

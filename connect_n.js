@@ -1,5 +1,7 @@
 // Connect-N game at the console
 
+"use strict";
+
 const { makeBoard, drop, show, won, isDraw, outOfBound } = require('./board');
 
 // Kevin,  command line user input processing
