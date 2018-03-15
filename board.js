@@ -53,6 +53,7 @@ function show(board) {
         rows.push(row.join(' '));
     }
     return rows.join('\n');
+    console.log('Showing board');
 }
 
 // Precondition: the last move was to column c.
@@ -96,4 +97,4 @@ function outOfBound(board, c, piece) {
         false;
 }
 
-module.exports = {makeBoard, drop, show, won};
+module.exports = { makeBoard, drop, show, won };
