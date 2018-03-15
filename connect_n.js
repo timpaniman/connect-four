@@ -39,11 +39,8 @@ rl.on('line', (line) => {
             console.log('Player ' + player.toString() + ', enter your column choice (0 - 6):')
             console.log('\n');
             drop(b, 0, player);
-            console.log('0 1 2 3 4 5 6');
-            console.log('_____________');
-            console.log(show(b));
             if (won(b, 0)) {
-
+                console.log(show(b));
                 console.log('Connect 4 Completed. Player ' + player.toString() + ' is winnwer.  Bye');
                 process.exit(0);
             }
@@ -52,6 +49,10 @@ rl.on('line', (line) => {
                 console.log('The game is Draw. Bye');
                 process.exit(0);
             }
+            console.log('0 1 2 3 4 5 6');
+            console.log('_____________');
+            console.log(show(b));
+
             console.log('\nEnter Here >> ');
 
 
