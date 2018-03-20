@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-const { makeBoard, drop, show } = require('./board');
-=======
 "use strict";
 
-const {makeBoard, at, drop, show, won} = require('./board');
->>>>>>> b767954c6e19b0dcd06298d6f0ad0ddb5bb78a8f
+const {makeBoard, drop, show, won} = require('./board');
 
-// Smoke test
+// Smoke tests
 
-function testme() {
-<<<<<<< HEAD
+function test1() {
     const b = makeBoard();
 
     console.log(show(b));
@@ -60,7 +55,9 @@ function testme() {
     drop(b, 6, 1);
     console.log(show(b));
     console.log();
-=======
+}
+
+function test2() {
     let b, mover, lastMove, moveNumber;
 
     function restart() {
@@ -109,9 +106,7 @@ function testme() {
     move(3); move(5);
     move(2);
     report();
-
->>>>>>> b767954c6e19b0dcd06298d6f0ad0ddb5bb78a8f
 }
 
-testme();
+test2();
 process.exit(0);
