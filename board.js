@@ -9,15 +9,6 @@ const nstreak = 4; // I think we want 5? But this is easier to test.
 const nrows = 6;
 const ncols = 7;
 
-// Kevin,  command line user input processing
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    prompt: 'Enter column # between 0 and 6 (Q to quit) > '
-});
-const endGame = false; // flag to exit while loop of getting user input to end game
-
 // A board is represented as an array of stacks of pieces. A piece is
 // an integer 1 or 2 denoting which player's.
 function makeBoard() {
